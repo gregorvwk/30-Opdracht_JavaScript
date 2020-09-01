@@ -123,19 +123,36 @@ const superheroes = [
 
 let dc = superheroes.filter(pub => pub.publisher == "DC Comics",).map(weight => ({value: weight.weight}))
 let array = []
-let sum = 0
+let sum2 = []
+// let sum = 0
 let total = function(array){
     for(i = 0; i < dc.length; i++){
-       array.push(dc[i].value)
+      array.push(dc[i].value)
     }
 }
 
 total(array)
-sum = array.reduce((accumulator, currentValue) => {
-    console.log(accumulator)
-    console.log(currentValue)
+
+let par = function(array){
+    for (i = 0; i < array.length; i++){
+       let sum2 = parseInt(array[i], 10)
+    }
+    return sum2
+}
+console.log(par(array))
+let sum = par(array).reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
 }, 0);
-console.log(sum)
+
+console.log(sum);
 
 
+let sum3 = ["2","4"]
+
+let par2 = function(sum3) {
+    for(i = 0; i < sum3.length; i++){
+        return parseInt(sum3[i], 10)
+    }
+
+}
+console.log(par2(sum3))
