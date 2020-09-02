@@ -121,38 +121,12 @@ const superheroes = [
 // let marvel = superheroes.filter(pub => pub.publisher == "Marvel Comics");
 // console.log(marvel)
 
-let dc = superheroes.filter(pub => pub.publisher == "DC Comics",).map(weight => ({value: weight.weight}))
-let array = []
-let sum2 = []
-// let sum = 0
-let total = function(array){
-    for(i = 0; i < dc.length; i++){
-      array.push(dc[i].value)
-    }
-}
-
-total(array)
-
-let par = function(array){
-    for (i = 0; i < array.length; i++){
-       let sum2 = parseInt(array[i], 10)
-    }
-    return sum2
-}
-console.log(par(array))
-let sum = par(array).reduce((accumulator, currentValue) => {
+let dc_heroes_weights = superheroes.filter(hero => hero.publisher == "DC Comics",).map(hero => (hero.weight)).map(number => parseInt(number)).reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
 }, 0);
+console.log(dc_heroes_weights)
 
-console.log(sum);
-
-
-let sum3 = ["2","4"]
-
-let par2 = function(sum3) {
-    for(i = 0; i < sum3.length; i++){
-        return parseInt(sum3[i], 10)
-    }
-
-}
-console.log(par2(sum3))
+let marvel_heroes_weights = superheroes.filter(hero => hero.publisher == "Marvel Comics",).map(hero => (hero.weight)).filter(notNumber => notNumber != "unknown").map(number => parseInt(number)).reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0);
+console.log(marvel_heroes_weights)
